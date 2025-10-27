@@ -62,11 +62,11 @@ const Index = () => {
         </div>
         
         {/* Couple Photo */}
-        <div className="max-w-3xl mx-auto">
+        <div className="w-full md:max-w-4xl mx-auto md:px-4">
           <img 
             src={couplePhoto} 
             alt="Foto do casal de noivos" 
-            className="w-full h-auto rounded-2xl shadow-2xl border-4 border-primary/20"
+            className="w-full h-auto md:rounded-3xl"
           />
         </div>
 
