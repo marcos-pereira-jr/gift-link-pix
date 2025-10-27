@@ -4,6 +4,7 @@ import { GiftModal } from "@/components/GiftModal";
 import { Heart } from "lucide-react";
 import couplePhoto from "@/assets/couple-photo.png";
 
+
 interface Gift {
   id: number;
   title: string;
@@ -58,24 +59,25 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-accent/20 to-background">
       {/* Header */}
-      <header className="py-12 px-4 text-center space-y-4">
+      <header className="py-12 px-4 text-center space-y-6">
         <div className="flex justify-center">
           <Heart className="w-16 h-16 text-primary animate-pulse" fill="currentColor" />
         </div>
-
-          <div className="w-full md:max-w-4xl mx-auto md:px-4 relative">
-            <div className="relative overflow-hidden md:rounded-3xl">
-              <img 
-                src={couplePhoto} 
-                alt="Foto do casal de noivos" 
-                className="w-full h-auto"
-                style={{
-                  maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)'
-                }}
-              />
-            </div>
+        
+        {/* Couple Photo */}
+        <div className="w-full md:max-w-4xl mx-auto md:px-4 relative">
+          <div className="relative overflow-hidden md:rounded-3xl">
+            <img 
+              src={couplePhoto} 
+              alt="Foto do casal de noivos" 
+              className="w-full h-auto"
+              style={{
+                maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)'
+              }}
+            />
           </div>
+        </div>
 
         <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
           Nossa Lista de Presentes
