@@ -2,12 +2,14 @@ import { useState } from "react";
 import { GiftCard } from "@/components/GiftCard";
 import { GiftModal } from "@/components/GiftModal";
 import { Heart } from "lucide-react";
+import couplePhoto from "@/assets/couple-photo.png";
 
 interface Gift {
   id: number;
   title: string;
   description: string;
   value: number;
+  imageUrl?: string;
 }
 
 const gifts: Gift[] = [
@@ -15,7 +17,8 @@ const gifts: Gift[] = [
     id: 1,
     title: "Lua de Mel - Passagens",
     description: "Contribua para tornar nossa viagem dos sonhos ainda mais especial",
-    value: 500.00
+    value: 500.00,
+    imageUrl: "https://forbes.com.br/wp-content/uploads/2024/03/Life_tendencias-de-viagem-2024.jpg"
   },
   {
     id: 2,
@@ -59,6 +62,21 @@ const Index = () => {
         <div className="flex justify-center">
           <Heart className="w-16 h-16 text-primary animate-pulse" fill="currentColor" />
         </div>
+
+          <div className="w-full md:max-w-4xl mx-auto md:px-4 relative">
+            <div className="relative overflow-hidden md:rounded-3xl">
+              <img 
+                src={couplePhoto} 
+                alt="Foto do casal de noivos" 
+                className="w-full h-auto"
+                style={{
+                  maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)'
+                }}
+              />
+            </div>
+          </div>
+
         <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
           Nossa Lista de Presentes
         </h1>
@@ -77,6 +95,7 @@ const Index = () => {
               title={gift.title}
               description={gift.description}
               value={gift.value}
+              imageUrl={gift.imageUrl}
               onClick={() => setSelectedGift(gift)}
             />
           ))}

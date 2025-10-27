@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Gift, Copy, Check } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { PIX } from 'gpix';
 
 interface GiftModalProps {
   isOpen: boolean;
@@ -15,9 +16,13 @@ interface GiftModalProps {
 export const GiftModal = ({ isOpen, onClose, title, description, value }: GiftModalProps) => {
   const [pixGenerated, setPixGenerated] = useState(false);
   const [copied, setCopied] = useState(false);
-  
-  // Simulated PIX code
-  const pixCode = `00020126580014br.gov.bcb.pix0136${Date.now()}520400005303986540${value.toFixed(2)}5802BR5913LISTA CASAMENTO6009SAO PAULO62070503***6304`;
+  console.log('Value for PIX generation:', value.toFixed(2));
+  const pixCode = PIX.static()
+  .setReceiverName('Marcos Pereira Junior')
+  .setReceiverCity('Rio de Janeiro')
+  .setKey('184.196.997-22') 
+  .setAmount(300)
+  .getBRCode();
 
   const handleGeneratePix = () => {
     setPixGenerated(true);

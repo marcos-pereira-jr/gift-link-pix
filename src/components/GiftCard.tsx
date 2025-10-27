@@ -6,17 +6,28 @@ interface GiftCardProps {
   description: string;
   value: number;
   onClick: () => void;
+  imageUrl?: string;
 }
 
-export const GiftCard = ({ title, description, value, onClick }: GiftCardProps) => {
+export const GiftCard = ({ title, description, value, onClick, imageUrl }: GiftCardProps) => {
   return (
     <Card
       onClick={onClick}
       className="group cursor-pointer overflow-hidden border-border bg-card transition-all duration-300 hover:shadow-[var(--shadow-elegant)] hover:-translate-y-1"
     >
       <div className="relative h-48 bg-gradient-to-br from-accent/50 to-primary/10 flex items-center justify-center">
+        {/* imagem de fundo, se fornecida */}
+        {imageUrl ? (
+          <img
+            src={imageUrl}
+            alt={title}
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        ) : (
+          <Gift className="w-16 h-16 text-primary relative z-10 transition-transform group-hover:scale-110" />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
-        <Gift className="w-16 h-16 text-primary relative z-10 transition-transform group-hover:scale-110" />
       </div>
       <div className="p-6 space-y-3">
         <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
