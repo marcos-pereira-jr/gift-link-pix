@@ -1,0 +1,14 @@
+<!-- 404.html para fallback SPA no GitHub Pages -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=./index.html" />
+    <script>
+      // Redireciona para index.html preservando o hash/rota
+      var l = window.location;
+      var path = l.pathname.replace(/\/[^/]*$/, '/');
+      window.location.replace(path + 'index.html' + l.search + l.hash);
+    </script>
+  </head>
+  <body></body>
+</html>
