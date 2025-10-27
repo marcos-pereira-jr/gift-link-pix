@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GiftCard } from "@/components/GiftCard";
 import { GiftModal } from "@/components/GiftModal";
 import { Heart } from "lucide-react";
+import couplePhoto from "@/assets/couple-photo.jpg";
 
 interface Gift {
   id: number;
@@ -55,10 +56,20 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-accent/20 to-background">
       {/* Header */}
-      <header className="py-12 px-4 text-center space-y-4">
+      <header className="py-12 px-4 text-center space-y-6">
         <div className="flex justify-center">
           <Heart className="w-16 h-16 text-primary animate-pulse" fill="currentColor" />
         </div>
+        
+        {/* Couple Photo */}
+        <div className="max-w-3xl mx-auto">
+          <img 
+            src={couplePhoto} 
+            alt="Foto do casal de noivos" 
+            className="w-full h-auto rounded-2xl shadow-2xl border-4 border-primary/20"
+          />
+        </div>
+
         <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
           Nossa Lista de Presentes
         </h1>
