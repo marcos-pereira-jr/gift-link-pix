@@ -62,12 +62,18 @@ const Index = () => {
         </div>
         
         {/* Couple Photo */}
-        <div className="w-full md:max-w-4xl mx-auto md:px-4">
-          <img 
-            src={couplePhoto} 
-            alt="Foto do casal de noivos" 
-            className="w-full h-auto md:rounded-3xl"
-          />
+        <div className="w-full md:max-w-4xl mx-auto md:px-4 relative">
+          <div className="relative overflow-hidden md:rounded-3xl">
+            <img 
+              src={couplePhoto} 
+              alt="Foto do casal de noivos" 
+              className="w-full h-auto"
+              style={{
+                maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)'
+              }}
+            />
+          </div>
         </div>
 
         <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
